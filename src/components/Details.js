@@ -16,8 +16,6 @@ function Details({video, upVotes, setUpVotes, downVotes, setDownVotes}) {
       <p>{video.views} Views | Uploaded {video.createdAt}</p>
       <button onClick={handleUpVotes}>{upVotes}👍</button>
       <button onClick={handleDownVotes}>{downVotes}👎</button>
-      <br/>
-      <button className="hideComments">Hide Comments</button>
     </>    
   )
 }
