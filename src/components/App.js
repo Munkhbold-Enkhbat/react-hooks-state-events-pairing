@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import video from "../data/video.js";
 import Details from "./Details"
 import Comments from "./Comments.js";
+import Video from "./Video.js";
 
 function App() {
   // console.log("Here's your data:", video);
@@ -30,14 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      <iframe
-        width="919"
-        height="525"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        frameBorder="0"
-        allowFullScreen
-        title="Thinking in React"
-      />
+      <Video embedUrl={video.embedUrl}/>
       <Details 
         video={video}
         upVotes={upVotes}  
