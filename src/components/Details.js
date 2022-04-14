@@ -1,13 +1,21 @@
 import React from "react"
-import video from "../data/video.js";
 
-function Details() {
+function Details({video, upVotes, setUpVotes, downVotes, setDownVotes}) {
+
+  function handleUpVotes() {
+    setUpVotes(currentUpVotes => currentUpVotes + 1)
+  }
+
+  function handleDownVotes() {
+    setDownVotes(currentDownVotes => currentDownVotes + 1)
+  }
+
   return (
     <>
       <h1>{video.title}</h1>
       <p>{video.views} Views | Uploaded {video.createdAt}</p>
-      <button>{video.upvotes}👍</button>
-      <button>{video.downvotes}👎</button>
+      <button onClick={handleUpVotes}>{upVotes}👍</button>
+      <button onClick={handleDownVotes}>{downVotes}👎</button>
       <br/>
       <button className="hideComments">Hide Comments</button>
     </>    
